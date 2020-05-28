@@ -1,31 +1,11 @@
 @charset "UTF-8";
 /*********************************************************************************************
 
-Theme Name: PhotoFrame
-Theme URI: https://www.ilovewp.com/themes/photoframe/
-Description: PhotoFrame is a beautiful and free Photography WordPress theme for fine art, bridal, family, portrait and wedding photographers that need a stylish website focused on delivering a great experience. A great deal of effort and attention went into making PhotoFrame a theme that will surprise you with its style and features. A full screen hero slideshow will present your photos with minimal distractions. Post thumbnails are portrait-sized (1:1,5). Some notable features: 1. The logo automatically switches from dark to light depending on the brightness of the hero image. 2. The header comes in two layouts: default (logo on the left, menu on the right) and centered (menu under logo). 3. A sticky menu that elegantly sits at the top of the page when visitors scroll. 4. Three widgetized areas in the footer. 
-Version: 1.0.4
-Author: ilovewpcom
-Author URI: https://www.ilovewp.com/
-License: GNU General Public License v3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Text Domain: photoframe
+Theme Name: Theme 1
+Author: Jérôme Laroy
 Tags: blog, portfolio, photography, custom-logo, footer-widgets, one-column, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 **********************************************************************************************
-
-1.  Toolbox CSS  -----------------------  All Theme Files
-2.  Page Structure: Header -------------  header.php
-3.  Navigation  ------------------------  header.php
-4.  Page Structure: Main Content  ------  
-5.  Content Blocks ---------------------  
-6.  Single Post / Page -----------------  single.php, page.php
-7.  Comments Styling  ------------------  comments.php
-8.  Page Structure: Footer  ------------  footer.php
-9.  Misc  ------------------------------
-10. Slicknav Responsive Menu  ----------
-11. Additional Color Palettes  ---------
-12. Media Queries  ---------------------
 
 0. Normalize
 
@@ -279,8 +259,8 @@ template {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6, .widget-title, .archives-title {
-  color: #0d0d0d;
-  font-family: "Frank Ruhl Libre", Arial, sans-serif;
+  
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   line-height: 1.3;
   margin: 0; }
@@ -435,7 +415,7 @@ input,
 select,
 textarea {
   color: #333;
-  font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 15px;
   font-size: 0.9375rem;
   font-weight: 400;
@@ -1017,7 +997,7 @@ h6 a:hover, h6 a:focus {
 body {
   background-color: #fff;
   color: #303030;
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 62.5%;
   line-height: 1.5rem;
   margin: 0;
@@ -1356,7 +1336,7 @@ div.divider {
   width: 100%; }
 
 .logged-in.page-with-slideshow #site-masthead {
-  top: 32px; }
+  top: 0px; }
 
 #site-masthead.site-masthead-fixed {
   background-color: #f5f5f5;
@@ -1583,12 +1563,11 @@ div.divider {
 #site-main #reply-title,
 #ilovewp-comments .comments-title {
   display: block;
-  font-family: "Frank Ruhl Libre", Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: 1px;
   line-height: 1.25em;
-  margin: 0 0 3.5rem;
   padding: 0;
   position: relative;
   text-align: center;
@@ -1843,7 +1822,7 @@ div.divider {
 .entry-content h3,
 .textwidget h3 {
   font-size: 1.375em;
-  text-transform: uppercase; }
+   }
 
 .entry-content h4,
 .textwidget h4 {

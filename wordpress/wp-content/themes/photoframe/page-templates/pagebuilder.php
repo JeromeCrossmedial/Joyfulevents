@@ -12,7 +12,7 @@ get_header();
 	while (have_posts()) : the_post();
 	?>
 
-	<div class="site-page-content site-page-fullwidth">
+	<div class="site-page-content">
 		<div class="site-section-wrapper site-section-wrapper-main clearfix">
 
 			<?php

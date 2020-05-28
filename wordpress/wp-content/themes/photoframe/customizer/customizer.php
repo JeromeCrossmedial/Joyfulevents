@@ -214,7 +214,7 @@ add_action( 'customize_controls_print_styles', 'photoframe_customizer_stylesheet
  *
  */
 
-function photoframe_customize_register( $wp_customize ) {
+function photoframe_customize_pagesections( $wp_customize ) {
 
     // Create custom panel.
 	$wp_customize->add_panel( 'page_sections', array(
@@ -288,24 +288,6 @@ function photoframe_customize_register( $wp_customize ) {
 	) );
 
     return $wp_customize;
-	
-	// Generate CSS output for each page section.
-	add_action( 'wp_enqueue_scripts', 'genesischild_css' );
 
-/**
- * Output CSS for background image
- */
-function page_section_customize_css()
-{
-?>
-    <style type="text/css">
-        .sectioncontainer { 
-           background-image:url('<?php echo get_theme_mod( 'section3_bg' );?>');
-		   background-color:red;
-        }
-    </style>
-<?php
 }
-add_action( 'wp_head', 'page_section_customize_css');
-}
-add_action( 'customize_register', 'photoframe_customize_register' );
+add_action( 'customize_register', 'photoframe_customize_pagesections' );
