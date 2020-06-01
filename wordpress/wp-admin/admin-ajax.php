@@ -125,7 +125,7 @@ $core_actions_post = array(
 	'search-plugins',
 	'search-install-plugins',
 	'activate-plugin',
-	'update-theme',
+	
 	'delete-theme',
 	'install-theme',
 	'get-post-thumbnail-html',

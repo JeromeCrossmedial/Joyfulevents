@@ -1,0 +1,92 @@
+.pro-verison{
+  background: #fff;
+  padding:10px 0;
+  text-align: center;
+}
+.pro-verison a{
+  text-decoration: none;
+  font-weight: bold;
+  color: red;
+}
+
+#logoshowcase_pro_custom_metabox{
+	background: #4054b2
+}
+
+#logoshowcase_pro_custom_metabox .hndle.ui-sortable-handle{
+	color: #fff;
+}
+#logoshowcase_pro_custom_metabox ul li{
+	color: #fff;
+	padding-bottom: 10px;
+}
+
+#logoshowcase_pro_custom_metabox ul li a{
+	text-decoration: none;
+	background: red;
+	padding:5px 8px;
+	color: #fff;
+	display: inline-block;
+}
+
+a.rst-upgrade-pro{
+	color:red;
+	font-weight: bold;
+}
+
+.wrap-meta-group div label {
+	width: 300px !important;
+}
+.wrap-meta-group div select {
+	width: 200px;
+}
+.wrap-meta-group div input {
+	width: 200px;
+}
+
+.wrap-meta-group .ui-tabs-panel > div {
+	padding: 20px 0;
+	border-top: 1px solid #eee;
+}
+.wrap-meta-group .ui-tabs-panel div.wrap-meta-group {
+	padding: 0;
+	border-top: none;
+}
+.ui-tabs-panel .wrap-meta-group > div {
+	padding: 20px 0;
+	border-top: 1px solid #eee;
+}
+#rs-logo-tabs ul {
+    margin: 30px 0;
+}
+#rs-logo-tabs ul li {
+	width: 24%;
+	display: inline-block;
+	margin: 0;
+	background: #4054b2;
+	border: 1px solid #4054b2;
+	border-right: 1px solid #eee;
+}
+#rs-logo-tabs ul li:last-child {
+	border-right: none;
+}
+#rs-logo-tabs ul li.ui-tabs-active {
+	background: #2d3a7b;
+}
+#rs-logo-tabs ul li a {
+	text-decoration: none;
+	color: #fff;
+	padding: 10px 15px;
+	display: block;
+	font-size: 16px;
+	font-weight: bold;
+	box-shadow: unset;
+}
+
+
+@media only screen and (max-width: 767px) {
+   	#rs-logo-tabs ul li {
+   		width: 100%;
+   	}
+  
+}

@@ -46,7 +46,6 @@ if ( ! class_exists( 'ILOVEWP_Customizer' ) ) :
          */
         public function sections( $wp_customize ) {
             $default_path = get_template_directory() . '/customizer/sections';
-
             // Load built-in section mods
             $builtin_mods = array(
                 'background',
@@ -108,6 +107,7 @@ if ( ! class_exists( 'ILOVEWP_Customizer' ) ) :
         private function add_sections_options( $wp_customize, $section, $args ) {
             foreach ( $args as $setting_id => $option ) {
                 // Add setting
+                $wp_customize->remove_section( 'colors' );  //Delete default colors tab 
                 if ( isset( $option['setting'] ) ) {
                     $defaults = array(
                         'type'                 => 'theme_mod',
@@ -215,33 +215,36 @@ add_action( 'customize_controls_print_styles', 'photoframe_customizer_stylesheet
  */
 
 function photoframe_customize_pagesections( $wp_customize ) {
+	
+	//remove old homepage section
+    $wp_customize->remove_section('static_front_page');
 
     // Create custom panel.
-	$wp_customize->add_panel( 'page_sections', array(
+	$wp_customize->add_panel( 'homepage_sections', array(
 		'priority'       => 70,
 		'theme_supports' => '',
-		'title'          => __( 'Page sections', 'photoframe' ),
-		'description'    => __( 'Set background images for sections.', 'photoframe' ),
+		'title'          => __( 'Homepage sections', 'photoframe' ),
+		'description'    => __( 'Set background images for sections on your homepage', 'photoframe' ),
 	) );
 	
 	// Add section 1.
-	$wp_customize->add_section( 'page_section_1' , array(
+	$wp_customize->add_section( 'homepage_section_1' , array(
 		'title'      => __( 'Section 1','photoframe' ),
-		'panel'      => 'page_sections',
+		'panel'      => 'homepage_sections',
 		'priority'   => 1,
 	) );
 	
 	// Add section 2.
-	$wp_customize->add_section( 'page_section_2' , array(
+	$wp_customize->add_section( 'homepage_section_2' , array(
 		'title'      => __( 'Section 2','photoframe' ),
-		'panel'      => 'page_sections',
+		'panel'      => 'homepage_sections',
 		'priority'   => 2,
 	) );
 	
 	// Add section 3.
-	$wp_customize->add_section( 'page_section_3' , array(
+	$wp_customize->add_section( 'homepage_section_3' , array(
 		'title'      => __( 'Section 3','photoframe' ),
-		'panel'      => 'page_sections',
+		'panel'      => 'homepage_sections',
 		'priority'   => 3,
 	) );
 
@@ -264,7 +267,7 @@ function photoframe_customize_pagesections( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize, 'section1_background_image', array(
 			  'label'      => __( 'Add section Background Here, the width should be approx 1400px', 'photoframe' ),
-			  'section'    => 'page_section_1',
+			  'section'    => 'homepage_section_1',
 			  'settings'   => 'section1_bg',
 			  )
 	) );
@@ -273,7 +276,7 @@ function photoframe_customize_pagesections( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize, 'section2_background_image', array(
 			  'label'      => __( 'Add section Background Here, the width should be approx 1400px', 'photoframe' ),
-			  'section'    => 'page_section_2',
+			  'section'    => 'homepage_section_2',
 			  'settings'   => 'section2_bg',
 			  )
 	) );
@@ -282,7 +285,7 @@ function photoframe_customize_pagesections( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize, 'section3_background_image', array(
 			  'label'      => __( 'Add section Background Here, the width should be approx 1400px', 'photoframe' ),
-			  'section'    => 'page_section_3',
+			  'section'    => 'homepage_section_3',
 			  'settings'   => 'section3_bg',
 			  )
 	) );
@@ -291,3 +294,77 @@ function photoframe_customize_pagesections( $wp_customize ) {
 
 }
 add_action( 'customize_register', 'photoframe_customize_pagesections' );
+
+// Customize Appearance Options
+function photoframe_customize_colors( $wp_customize ) {
+
+	$wp_customize->add_setting('lwp_site_color', array(
+		'default' => '#D48F40',
+		'transport' => 'refresh',
+	));
+
+	$wp_customize->add_setting('lwp_logo_color', array(
+		'default' => '#D48F40',
+		'transport' => 'refresh',
+	));
+
+	$wp_customize->add_section('lwp_standard_colors', array(
+		'title' => __('Standaard Kleuren', 'photoframe'),
+		'priority' => 30,
+	));
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'lwp_site_color_control', array(
+		'label' => __('Website Color', 'photoframe'),
+		'section' => 'lwp_standard_colors',
+		'settings' => 'lwp_site_color',
+	) ) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'lwp_logo_color_control', array(
+		'label' => __('Logo Color', 'photoframe'),
+		'section' => 'lwp_standard_colors',
+		'settings' => 'lwp_logo_color',
+	) ) );
+
+}
+
+add_action('customize_register', 'photoframe_customize_colors');
+
+
+// Output Customize CSS
+function learningWordPress_customize_css() { ?>
+
+	<style type="text/css">
+
+		a:hover {
+			color: <?php echo get_theme_mod('lwp_site_color'); ?>;
+		}
+
+		input[type=submit]{
+			background: <?php echo get_theme_mod('lwp_site_color'); ?>;
+		}
+
+		.page-title-span:after {
+			border:3px solid <?php echo get_theme_mod('lwp_site_color'); ?>!important;
+		}
+		
+		input[type=radio]:checked {
+        	background-color: <?php echo get_theme_mod('lwp_site_color'); ?>;
+    	}
+		
+		.large-nav .current-menu-item > a {
+			color:<?php echo get_theme_mod('lwp_site_color'); ?>;
+			text-decoration: none;
+		}
+		
+		.large-nav a:hover, .large-nav a:focus {
+			color:<?php echo get_theme_mod('lwp_site_color'); ?>!important;
+			text-decoration: none!important;
+		}
+
+	</style>
+
+<?php }
+
+add_action('wp_head', 'learningWordPress_customize_css');
+
+

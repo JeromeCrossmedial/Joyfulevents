@@ -1,0 +1,35 @@
+.pro-verison{
+  background: #fff;
+  padding:10px 0;
+  text-align: center;
+}
+.pro-verison a{
+  text-decoration: none;
+  font-weight: bold;
+  color: red;
+}
+
+#logoshowcase_pro_custom_metabox{
+	background: #4054b2
+}
+
+#logoshowcase_pro_custom_metabox .hndle.ui-sortable-handle{
+	color: #fff;
+}
+#logoshowcase_pro_custom_metabox ul li{
+	color: #fff;
+	padding-bottom: 10px;
+}
+
+#logoshowcase_pro_custom_metabox ul li a{
+	text-decoration: none;
+	background: red;
+	padding:5px 8px;
+	color: #fff;
+	display: inline-block;
+}
+
+a.rst-upgrade-pro{
+	color:red;
+	font-weight: bold;
+}

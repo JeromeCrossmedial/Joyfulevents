@@ -1,0 +1,402 @@
+/**
+*
+* -----------------------------------------------------------------------------
+*
+* Template : Logo Showcase WordPress Plugin
+* Author : rs-theme
+* Author URI : https://codecanyon.net/user/rs-theme/portfolio
+*
+* -----------------------------------------------------------------------------
+*
+**/
+/* Table Of Content
+---------------------------------------------------------
+01. logo Grid Styles
+03. logo Slider Styles
+04. logo List Styles
+05. Single logo Styles
+06. Responsive CSS
+--------------------------------------------------------*/
+
+/* ------------------------------------
+	01. logo Grid Styles
+---------------------------------------*/
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-0 {
+  margin-bottom: 0px !important;
+}
+.padding-20 {
+  padding: 20px;
+}
+.no-padding {
+  padding: 0;
+}
+.title-style {
+  padding: 50px 0;
+}
+.pagination-area{
+    width: 100%;
+}
+.logo-slider-style .logo-item-wrap > .logo-img img{
+  width:  auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.logo-style {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+}
+.logo-img a {
+  display: inline-block;
+}
+.logo-style .grid-style-1.center {
+  justify-content: center;
+}
+.logo-style .grid-style-1 .logo-item-wrap {
+  position: relative;
+}
+.logo-style .grid-style-1 .default-border-style {
+  border: 1px solid rgba(204, 204, 204, .4);
+}
+.logo-style .grid-style-1 .default-content-border-style {
+  border: 1px solid rgba(204, 204, 204, .4);
+  padding: 15px;
+}
+.logo-style .grid-style-1 .border-style {
+  border-bottom: 1px solid rgba(204, 204, 204, .4);
+  border-right: 1px solid rgba(204, 204, 204, .4);
+  padding: 30px;
+}
+.logo-style .grid-style-1 .border-style.last_item {
+  border-right: none;
+}
+.logo-style .grid-style-1 .border-style.last-row {
+  border-bottom: none;
+}
+
+.logo-style .grid-style-1.opacity-style .logo-item-wrap {
+  transition: all 0.2s ease-in-out 0s;
+}
+.logo-style .grid-style-1.opacity-style:hover .logo-item-wrap {
+  opacity: 0.5;
+}
+.logo-style .grid-style-1.opacity-style .logo-item-wrap {
+  transition: all 0.5s ease 0s;
+  border: 1px solid #ccc;
+}
+.logo-style .grid-style-1.opacity-style .logo-item-wrap:hover {
+  transition: all 0.5s ease 0s;
+  border: 1px solid #000000;
+  opacity: 1;
+}
+
+.logo-style .grid-style-1.blur-style .logo-item-wrap {
+  border: 1px solid #ccc;
+}
+.logo-style .grid-style-1.blur-style .logo-item-wrap .logo-img img {
+  filter: blur(2px);
+  transition: 0.5s;
+}
+.logo-style .grid-style-1.blur-style .logo-item-wrap:hover .logo-img img {
+  filter: blur(0px);
+}
+
+.logo-style .grid-style-1.zoom-style .logo-item-wrap {
+  overflow: visible;
+  padding: 5px;
+  transition: 0.5s;
+}
+
+.logo-style .grid-style-1.zoom-style .logo-item-wrap .logo-img img {
+  transition: 0.3s;
+}
+
+.logo-style .grid-style-1.zoom-style .logo-item-wrap {
+  box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.5) inset;
+}
+
+.logo-style .grid-style-1.zoom-style .logo-item-wrap:hover .logo-img img {
+  transform: scale(1.1);
+}
+
+.logo-style .grid-style-1 .logo-item-wrap a {
+  text-decoration: none;
+}
+.logo-style .grid-style-1 .logo-item-wrap .logo-img {
+  position: relative;
+  text-align: center;
+}
+.logo-style .grid-style-1 .logo-item-wrap .logo-img .normal-text .logo-name {
+  margin-bottom: 0;
+  display: block;
+  padding: 10px 20px 5px;
+  font-size: 18px;
+  line-height: 25px;
+}
+.logo-style .grid-style-1 .logo-item-wrap .logo-img .normal-text .logo-name a {
+  position: relative;
+  text-transform: capitalize;
+  z-index: 111;
+}
+.logo-style .grid-style-1 .logo-item-wrap .logo-img .normal-text p {
+  padding: 10px 20px 20px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.popup-style .logo-item-wrap .logo-img .normal-text {
+  text-align: center;
+}
+
+.popup-style .logo-item-wrap .logo-img .normal-text a {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 0;
+  display: inline-block;
+}
+
+.popup-style .single-logo-details {
+  align-items: center;
+}
+
+.mfp-content .single-logo-details .team-name {
+  margin: 0 0 15px;
+}
+
+.light_box .logo-style .grid-style-4 .overlay-item .overlay-section .overlay-text{
+  top: 50%;
+  transform: translateY(-50%);
+}
+.light_box .logo-style .grid-style-3 .items .item-img .items-desc{
+      bottom: -50px;
+}
+
+/* ------------------------------------
+	03. logo Slider Styles
+---------------------------------------*/
+.logo-slider-style {
+  font-size: 14px;
+}
+
+.logo-slider-style .owl-carousel {
+  padding-top: 0;
+}
+.logo-slider-style .owl-carousel .owl-nav {
+  right: 0;
+}
+.logo-slider-style .owl-carousel .owl-nav [class*="owl-"] {
+  font-size: 0;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  background: #4d6de6;
+  color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  transition: 0.6s ease all;
+  opacity: 0;
+  visibility: hidden;
+}
+.logo-slider-style .owl-carousel .owl-nav [class*="owl-"] i {
+  display: none;
+}
+.logo-slider-style .owl-carousel .owl-nav [class*="owl-"]:before {
+  font-family: FontAwesome;
+  position: absolute;
+  font-size: 26px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+.logo-slider-style .owl-carousel .owl-nav [class*="owl-"].owl-prev {
+  left: 0;
+}
+.logo-slider-style .owl-carousel .owl-nav [class*="owl-"].owl-prev:before {
+  content: "\f104";
+}
+.logo-slider-style .owl-carousel .owl-nav [class*="owl-"].owl-next {
+  right: 0;
+}
+.logo-slider-style .owl-carousel .owl-nav [class*="owl-"].owl-next:before {
+  content: "\f105";
+  margin-left: 2px;
+}
+.logo-slider-style .owl-carousel .owl-nav [class*="owl-"]:hover {
+  background: #22b8f2;
+  color: #fff;
+}
+.logo-slider-style .owl-carousel:hover .owl-nav [class*="owl-"] {
+  opacity: 1;
+  visibility: visible;
+}
+.logo-slider-style .owl-carousel:hover .owl-nav [class*="owl-"].owl-prev {
+  left: -60px;
+}
+.logo-slider-style .owl-carousel:hover .owl-nav [class*="owl-"].owl-next {
+  right: -60px;
+}
+
+.logo-slider-style .owl-carousel .owl-dots {
+  text-align: center;
+  line-height: 1;
+  margin: 20px 0 0;
+}
+.logo-slider-style .owl-carousel .owl-dots .owl-dot {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin: 0 3px;
+  padding: 3px 0;
+  border-radius: 50%;
+  border: 1px solid #4d6de6;
+}
+.logo-slider-style .owl-carousel .owl-dots .owl-dot:hover {
+  background: #4d6de6;
+}
+.logo-slider-style .owl-carousel .owl-dots .active {
+  background: #4d6de6;
+}
+.logo-slider-style .owl-carousel .owl-dots .owl-dot span {
+  display: none !important;
+}
+.isotope .logo-filter {
+  margin-bottom: 30px;
+}
+.isotope .logo-filter.left {
+  text-align: left;
+}
+.isotope .logo-filter.center {
+  text-align: center;
+}
+.isotope .logo-filter.right {
+  text-align: right;
+}
+.isotope .logo-filter button {
+  position: relative;
+  background: unset;
+  border: none;
+  padding: 0;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  margin-right: 23px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+.isotope .logo-filter button:after {
+  position: absolute;
+  content: '/';
+  color: #333;
+  right: -10px;
+  top: 0;
+}
+.isotope .logo-filter button:last-child {
+  margin-right: 0;
+}
+.isotope .logo-filter button:last-child:after {
+  display: none;
+}
+.isotope .logo-filter button:hover {
+  color: #22b8f2;
+}
+.isotope .logo-filter button.active {
+  color: #22b8f2;
+}
+.isotope .logo-filter button.active:after {
+  color: #22b8f2;
+}
+
+/* ------------------------------------
+	04. logo List Styles
+---------------------------------------*/
+.logo-list-style .list-style-1 .list-item {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.list-style-1 .list-full{
+  border-bottom: 1px solid #f2f2f2;
+  padding-bottom: 50px;
+  margin-bottom: 60px;
+   transform: scale(0.9);
+  transition: 0.3s;
+}
+.list-style-1 .list-full:hover{
+  transform: scale(1);
+}
+
+.list-style-1 .list-full .name h3{
+  margin-bottom: 15px;
+}
+.logo-list-style .list-style-1 .list-item h2 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.logo-list-style .list-style-1 .list-item:hover .image img {
+  transform: scale(1);
+}
+.logo-list-style .list-style-1 .list-item:hover .list-text .name h1 a i {
+  transform: scale(1);
+}
+.logo-list-style .list-style-1 .list-item .image {
+
+}
+.logo-list-style .list-style-1 .list-item .image img {
+  transform: scale(0.9);
+  transition: 0.3s;
+}
+
+/* ------------------------------------
+	06. Responsive CSS
+---------------------------------------*/
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .logo-slider-style .owl-carousel .owl-nav [class*="owl-"].owl-prev {
+    left: 15px;
+  }
+  .logo-slider-style .owl-carousel:hover .owl-nav [class*="owl-"].owl-prev {
+    left: -15px;
+  }
+
+  .logo-slider-style .owl-carousel .owl-nav [class*="owl-"].owl-next {
+    right: 15px;
+  }
+  .logo-slider-style .owl-carousel:hover .owl-nav [class*="owl-"].owl-next {
+    right: -15px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .logo-area h1 {
+    line-height: 50px !important;
+  }
+  .logo-style .grid-style-1 .border-style {
+    border-bottom: 1px solid rgba(204, 204, 204, .4) !important;
+    border-right: none;
+  }
+  .logo-slider-style .owl-carousel .owl-nav {
+    display: none;
+  }
+  .list-style-1 .list-full {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+   
+  
+}
+
+@media only screen and (max-width: 575px) {
+  .list-style-1 .list-full {
+    text-align: center;
+  }
+}

@@ -25,89 +25,6 @@ function ilovewp_customizer_define_general_sections( $sections ) {
                     'choices' => $theme_header_style
                 ),
             ),
-
-            'photoframe-display-featured-hero' => array(
-                'setting'               => array(
-                    'sanitize_callback' => 'absint',
-                    'default'           => 0
-                ),
-                'control'               => array(
-                    'label'             => __( 'Display Featured Images on Single Pages', 'photoframe' ),
-                    'type'              => 'checkbox'
-                )
-            ),
-
-            'photoframe-display-recentposts'    => array(
-                'setting'               => array(
-                    'sanitize_callback' => 'absint',
-                    'default'           => 1
-                ),
-                'control'               => array(
-                    'label'             => __( 'Display Recent Posts on Homepage', 'photoframe' ),
-                    'type'              => 'checkbox'
-                )
-            ),
-
-            'photoframe-display-pages'    => array(
-                'setting'               => array(
-                    'sanitize_callback' => 'absint',
-                    'default'           => 0
-                ),
-                'control'               => array(
-                    'label'             => __( 'Display Featured Pages on Homepage', 'photoframe' ),
-                    'type'              => 'checkbox'
-                )
-            ),
-
-            'photoframe-featured-pages-headline' => array(
-                'setting' => array(
-                    'sanitize_callback' => 'ilovewp_sanitize_text',
-                    'default'           => esc_html__( 'Portfolio Categories', 'photoframe' ),
-                ),
-                'control' => array(
-                    'label'             => esc_html__( 'Featured Pages Headline', 'photoframe' ),
-                    'type'              => 'text',
-                ),
-            ),
-
-            'photoframe-featured-page-1'  => array(
-                'setting'               => array(
-                    'default'           => 'none',
-                    'sanitize_callback' => 'photoframe_sanitize_pages'
-                ),
-                'control'               => array(
-                    'label'             => esc_html__( 'Featured Page #1', 'photoframe' ),
-                                            /* translators: Link to dashboard pages page */
-                    'description'       => sprintf( wp_kses( __( 'This list is populated with <a href="%1$s">Pages</a>.', 'photoframe' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'edit.php?post_type=page' ) ) ),
-                    'type'              => 'select',
-                    'choices'           => photoframe_get_pages()
-                ),
-            ),
-
-            'photoframe-featured-page-2'  => array(
-                'setting'               => array(
-                    'default'           => 'none',
-                    'sanitize_callback' => 'photoframe_sanitize_pages'
-                ),
-                'control'               => array(
-                    'label'             => esc_html__( 'Featured Page #2', 'photoframe' ),
-                    'type'              => 'select',
-                    'choices'           => photoframe_get_pages()
-                ),
-            ),
-
-            'photoframe-featured-page-3'  => array(
-                'setting'               => array(
-                    'default'           => 'none',
-                    'sanitize_callback' => 'photoframe_sanitize_pages'
-                ),
-                'control'               => array(
-                    'label'             => esc_html__( 'Featured Page #3', 'photoframe' ),
-                    'type'              => 'select',
-                    'choices'           => photoframe_get_pages()
-                ),
-            ),
-
         ),
     );
 
@@ -133,5 +50,6 @@ $wp_customize->add_control(
         )
     )
 );
+
 
 add_filter( 'ilovewp_customizer_sections', 'ilovewp_customizer_define_general_sections' );

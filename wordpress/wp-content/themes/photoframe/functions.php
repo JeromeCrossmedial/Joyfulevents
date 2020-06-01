@@ -1,6 +1,7 @@
 <?php			
 
 if ( ! isset( $content_width ) ) $content_width = 1100;
+if ( ! isset( $content_width ) ) $content_width = 1100;
 
 /**
  * Define some constats
@@ -20,6 +21,9 @@ if( ! defined( 'ILOVEWP_DIR' ) ) {
 if( ! defined( 'ILOVEWP_DIR_URI' ) ) {
 	define( 'ILOVEWP_DIR_URI', trailingslashit( get_template_directory_uri() ) );
 }
+
+/* Disable WordPress Admin Bar for all users but admins. */
+  //show_admin_bar(false);
 
 /* Disable PHP error reporting for notices, leave only the important ones 
 ================================== */
@@ -288,25 +292,6 @@ function photoframe_excerpt($text)
 }
 add_filter('the_excerpt', 'photoframe_excerpt');
 
-/* Convert HEX color to RGB value (for the customizer)						
-==================================== */
-
-function photoframe_hex2rgb($hex) {
-	$hex = str_replace("#", "", $hex);
-	
-	if(strlen($hex) == 3) {
-		$r = hexdec(substr($hex,0,1).substr($hex,0,1));
-		$g = hexdec(substr($hex,1,1).substr($hex,1,1));
-		$b = hexdec(substr($hex,2,1).substr($hex,2,1));
-	} else {
-		$r = hexdec(substr($hex,0,2));
-		$g = hexdec(substr($hex,2,2));
-		$b = hexdec(substr($hex,4,2));
-	}
-	$rgb = "$r, $g, $b";
-	return $rgb; // returns an array with the rgb values
-}
-
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
@@ -332,16 +317,7 @@ if ( ! function_exists( 'photoframe_scripts_admin' ) ) {
 	 * @since  1.0.2
 	 * @return void
 	 */
-	function photoframe_scripts_admin( $hook ) {
-		// if ( 'widgets.php' !== $hook ) return;
 
-		// Styles
-		wp_enqueue_style(
-			'photoframe-style-admin',
-			get_template_directory_uri() . '/ilovewp-admin/css/ilovewp_theme_settings.css',
-			'', ILOVEWP_VERSION, 'all'
-		);
-	}
 }
 add_action( 'admin_enqueue_scripts', 'photoframe_scripts_admin' );
 
