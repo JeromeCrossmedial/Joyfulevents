@@ -209,85 +209,74 @@ function photoframe_customizer_stylesheet() {
 
 add_action( 'customize_controls_print_styles', 'photoframe_customizer_stylesheet' );
 
-/**
- * Add pageSection support for site homepage.
- *
- */
+// Customize Appearance Options
+function photoframe_customize_colors( $wp_customize ) {
 
-function photoframe_customize_pagesections( $wp_customize ) {
+	$wp_customize->add_setting('lwp_site_color', array(
+		'default' => '#AECCC2',
+		'transport' => 'refresh',
+	));
 
-    // Create custom panel.
-	$wp_customize->add_panel( 'page_sections', array(
-		'priority'       => 70,
-		'theme_supports' => '',
-		'title'          => __( 'Page sections', 'photoframe' ),
-		'description'    => __( 'Set background images for sections.', 'photoframe' ),
-	) );
-	
-	// Add section 1.
-	$wp_customize->add_section( 'page_section_1' , array(
-		'title'      => __( 'Section 1','photoframe' ),
-		'panel'      => 'page_sections',
-		'priority'   => 1,
-	) );
-	
-	// Add section 2.
-	$wp_customize->add_section( 'page_section_2' , array(
-		'title'      => __( 'Section 2','photoframe' ),
-		'panel'      => 'page_sections',
-		'priority'   => 2,
-	) );
-	
-	// Add section 3.
-	$wp_customize->add_section( 'page_section_3' , array(
-		'title'      => __( 'Section 3','photoframe' ),
-		'panel'      => 'page_sections',
-		'priority'   => 3,
-	) );
+	$wp_customize->add_setting('lwp_heading_color', array(
+		'default' => '#AECCC2',
+		'transport' => 'refresh',
+	));
 
-	// Add setting section 1.
-	$wp_customize->add_setting( 'section1_bg', array(
-		'default'     => get_stylesheet_directory_uri() . '/images/foto-pettine-IfjHaIoAoqE-unsplash.jpg',
-	) );
-	
-	// Add setting section 2.
-	$wp_customize->add_setting( 'section2_bg', array(
-		'default'     => get_stylesheet_directory_uri() . '/images/tristan-gassert-IRzq8sDxb7w-unsplash.jpg',
-	) );
-	
-	// Add setting section 3.
-	$wp_customize->add_setting( 'section3_bg', array(
-		'default'     => get_stylesheet_directory_uri() . '/images/foto-pettine-IfjHaIoAoqE-unsplash.jpg',
-	) );
+	$wp_customize->add_section('lwp_standard_colors', array(
+		'title' => __('Standaard Kleuren', 'photoframe'),
+		'priority' => 30,
+	));
 
-	// Add control section 1.
-	$wp_customize->add_control( new WP_Customize_Image_Control(
-		$wp_customize, 'section1_background_image', array(
-			  'label'      => __( 'Add section Background Here, the width should be approx 1400px', 'photoframe' ),
-			  'section'    => 'page_section_1',
-			  'settings'   => 'section1_bg',
-			  )
-	) );
-	
-	// Add control section 2.
-	$wp_customize->add_control( new WP_Customize_Image_Control(
-		$wp_customize, 'section2_background_image', array(
-			  'label'      => __( 'Add section Background Here, the width should be approx 1400px', 'photoframe' ),
-			  'section'    => 'page_section_2',
-			  'settings'   => 'section2_bg',
-			  )
-	) );
-	
-	// Add control section 3.
-	$wp_customize->add_control( new WP_Customize_Image_Control(
-		$wp_customize, 'section3_background_image', array(
-			  'label'      => __( 'Add section Background Here, the width should be approx 1400px', 'photoframe' ),
-			  'section'    => 'page_section_3',
-			  'settings'   => 'section3_bg',
-			  )
-	) );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'lwp_site_color_control', array(
+		'label' => __('Website Color', 'photoframe'),
+		'section' => 'lwp_standard_colors',
+		'settings' => 'lwp_site_color',
+	) ) );
 
-    return $wp_customize;
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'lwp_heading_color_control', array(
+		'label' => __('Heading Color', 'photoframe'),
+		'section' => 'lwp_standard_colors',
+		'settings' => 'lwp_heading_color',
+	) ) );
 
 }
-add_action( 'customize_register', 'photoframe_customize_pagesections' );
+
+add_action('customize_register', 'photoframe_customize_colors');
+
+
+// Output Customize CSS
+function learningWordPress_customize_css() { ?>
+
+	<style type="text/css">
+
+		a:hover {
+			color: <?php echo get_theme_mod('lwp_site_color'); ?>;
+		}
+
+		input[type=submit]{
+			background: <?php echo get_theme_mod('lwp_site_color'); ?>;
+		}
+
+		.page-title-span:after {
+			border:3px solid <?php echo get_theme_mod('lwp_site_color'); ?>!important;
+		}
+		
+		input[type=radio]:checked {
+        	background-color: <?php echo get_theme_mod('lwp_site_color'); ?>;
+    	}
+		
+		.large-nav .current-menu-item > a {
+			color:<?php echo get_theme_mod('lwp_site_color'); ?>;
+			text-decoration: none;
+		}
+		
+		.large-nav a:hover, .large-nav a:focus {
+			color:<?php echo get_theme_mod('lwp_site_color'); ?>!important;
+			text-decoration: none!important;
+		}
+
+	</style>
+
+<?php }
+
+add_action('wp_head', 'learningWordPress_customize_css');
