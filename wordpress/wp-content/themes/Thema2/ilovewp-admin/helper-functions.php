@@ -84,7 +84,7 @@ if( ! function_exists( 'ilovewp_helper_display_content' ) ) {
 
 		if( ! is_object( $post ) ) return;
 
-		echo '<div class="entry-content">';
+		echo '<div class="entry-content page">';
 			
 			the_content();
 			

@@ -5,15 +5,14 @@
 
 get_header();
 ?>
-
+<div id="horizontal-line-page" class="page"></div>
 <main id="site-main">
 
 	<?php
 	while (have_posts()) : the_post();
 	?>
 
-	<div class="site-page-content">
-		<div class="site-section-wrapper site-section-wrapper-main clearfix">
+	
 
 			<?php
 			// Function to display the START of the content column markup
@@ -25,9 +24,6 @@ get_header();
 			ilovewp_helper_display_page_content_wrapper_end();
 
 			?>
-
-		</div><!-- .site-section-wrapper .site-section-wrapper-main -->
-	</div><!-- .site-page-content -->
 
 	<?php
 	endwhile;
