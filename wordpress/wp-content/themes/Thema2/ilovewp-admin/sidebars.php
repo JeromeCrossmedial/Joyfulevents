@@ -68,6 +68,11 @@ function photoframe_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Box: Column 2', 'photoframe' ),
 		'id'            => 'box-col-2',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Box: Column 1', 'photoframe' ),
+		'id'            => 'box-col-1',
 		'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-content-wrapper">',
 		'after_widget'  => '</div><!-- .widget-content-wrapper --></div>',
 		'before_title'  => '<h2>',
@@ -77,6 +82,8 @@ function photoframe_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Box: Column 3', 'photoframe' ),
 		'id'            => 'box-col-3',
+		'name'          => esc_html__( 'Box: Column 2', 'photoframe' ),
+		'id'            => 'box-col-2',
 		'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-content-wrapper">',
 		'after_widget'  => '</div><!-- .widget-content-wrapper --></div>',
 		'before_title'  => '<h2>',
@@ -97,6 +104,12 @@ function photoframe_widgets_init() {
 		'id'            => 'homepage-gallery-text-bottom',
 		'before_widget' => '<div id="%1$s">',
 		'after_widget'  => '</div>',
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Box: Column 3', 'photoframe' ),
+		'id'            => 'box-col-3',
+		'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-content-wrapper">',
+		'after_widget'  => '</div><!-- .widget-content-wrapper --></div>',
 		'before_title'  => '<h2>',
 		'after_title'   => '</h2>',
 	) );

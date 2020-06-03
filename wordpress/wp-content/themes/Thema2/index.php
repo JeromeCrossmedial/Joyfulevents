@@ -51,6 +51,8 @@
 	<div id="gallery">
 	<?php 
 	echo do_shortcode('[modula id="250"]');
+	<?php 
+
 		
 	}  
 	//} 

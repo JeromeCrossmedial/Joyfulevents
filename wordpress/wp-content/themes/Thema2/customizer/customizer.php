@@ -261,6 +261,14 @@ function learningWordPress_customize_css() { ?>
 			border:3px solid <?php echo get_theme_mod('lwp_site_color'); ?>!important;
 		}
 		
+		.page-title-span:after {
+			border:3px solid <?php echo get_theme_mod('lwp_site_color'); ?>!important;
+		}
+		
+		input[type=radio]:checked {
+        	background-color: <?php echo get_theme_mod('lwp_site_color'); ?>;
+    	}
+		
 		.large-nav .current-menu-item > a {
 			color:<?php echo get_theme_mod('lwp_site_color'); ?>;
 			text-decoration: none;
