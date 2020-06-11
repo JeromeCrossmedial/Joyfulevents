@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.4.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-04-01 13:33:23+0000\n"
+"PO-Revision-Date: 2020-06-07 07:33:40+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -76,6 +76,10 @@ msgstr "."
 #: wp-includes/class-wp-locale.php:208
 msgid "number_format_decimal_point"
 msgstr ","
+
+#: wp-includes/rest-api.php:50
+msgid "Namespace must not start or end with a slash."
+msgstr "Namespace mag niet starten of eindigen met een slash."
 
 #. translators: 1: Type of block (i.e. Text, Image etc)
 #: wp-includes/js/dist/block-editor.js:23760
@@ -1735,7 +1739,7 @@ msgstr "Voldoet niet aan de vereisten."
 msgid "The %1$s, %2$s, and %3$s values can be edited to set the video track language and kind."
 msgstr "De waarden van %1$s, %2$s, en %3$s kunnen aangepast worden om de taal en het type van de video-track in te stellen."
 
-#: wp-includes/comment.php:3498
+#: wp-includes/comment.php:3503
 msgid "User&#8217;s comment data."
 msgstr "Gebruikersreactiedata."
 
@@ -2478,7 +2482,7 @@ msgid "Embed Crowdsignal (formerly Polldaddy) content."
 msgstr "Crowdsignal (voorheen Polldaddy) inhoud insluiten."
 
 #. translators: %s: rest_api_init
-#: wp-includes/rest-api.php:52
+#: wp-includes/rest-api.php:58
 msgid "REST API routes must be registered on the %s action."
 msgstr "REST API routes moeten geregistreerd worden op de %s actie."
 
@@ -2494,8 +2498,8 @@ msgid_plural "Failed <span class=\"count\">(%s)</span>"
 msgstr[0] "Mislukt <span class=\"count\">(%s)</span>"
 msgstr[1] "Mislukt <span class=\"count\">(%s)</span>"
 
-#: wp-includes/class-walker-comment.php:271
-#: wp-includes/class-walker-comment.php:361
+#: wp-includes/class-walker-comment.php:304
+#: wp-includes/class-walker-comment.php:402
 msgid "Your comment is awaiting moderation. This is a preview, your comment will be visible after it has been approved."
 msgstr "Je reactie wacht op goedkeuring. Dit is een voorbeeld, je reactie zal pas zichtbaar worden na de goedkeuring."
 
@@ -5555,7 +5559,7 @@ msgid "[deleted]"
 msgstr "[verwijderd]"
 
 #. translators: %d: Comment ID.
-#: wp-includes/comment.php:3599
+#: wp-includes/comment.php:3604
 msgid "Comment %d contains personal data but could not be anonymized."
 msgstr "Reactie %d bevat persoonlijke gegevens, maar kon niet geanonimiseerd worden."
 
@@ -5659,39 +5663,39 @@ msgctxt "request status"
 msgid "Pending"
 msgstr "In behandeling"
 
-#: wp-includes/comment.php:3454
+#: wp-includes/comment.php:3459
 msgid "Comment URL"
 msgstr "Reactie URL"
 
-#: wp-includes/comment.php:3453
+#: wp-includes/comment.php:3458
 msgid "Comment Content"
 msgstr "Reactie inhoud"
 
-#: wp-includes/comment.php:3452
+#: wp-includes/comment.php:3457
 msgid "Comment Date"
 msgstr "Reactie datum"
 
-#: wp-includes/comment.php:3451
+#: wp-includes/comment.php:3456
 msgid "Comment Author User Agent"
 msgstr "Reactie auteur User Agent"
 
-#: wp-includes/comment.php:3450
+#: wp-includes/comment.php:3455
 msgid "Comment Author IP"
 msgstr "Reactie auteur IP"
 
-#: wp-includes/comment.php:3449
+#: wp-includes/comment.php:3454
 msgid "Comment Author URL"
 msgstr "Reactie auteur URL"
 
-#: wp-includes/comment.php:3448
+#: wp-includes/comment.php:3453
 msgid "Comment Author Email"
 msgstr "Reactie auteur e-mail"
 
-#: wp-includes/comment.php:3447
+#: wp-includes/comment.php:3452
 msgid "Comment Author"
 msgstr "Reactie auteur"
 
-#: wp-includes/comment.php:3412 wp-includes/comment.php:3522
+#: wp-includes/comment.php:3417 wp-includes/comment.php:3527
 msgid "WordPress Comments"
 msgstr "WordPress reacties"
 
@@ -5758,7 +5762,7 @@ msgid "Installed"
 msgstr "Geïnstalleerd"
 
 #. translators: %s: Property of an object.
-#: wp-includes/rest-api.php:1279
+#: wp-includes/rest-api.php:1285
 msgid "%1$s is not a valid property of Object."
 msgstr "%1$s is geen geldige eigenschap van Object."
 
@@ -7117,22 +7121,22 @@ msgid "Updated!"
 msgstr "Bijgewerkt!"
 
 #. translators: 1: Parameter, 2: Maximum number.
-#: wp-includes/rest-api.php:1365
+#: wp-includes/rest-api.php:1371
 msgid "%1$s must be less than or equal to %2$d"
 msgstr "%1$s moet minder of gelijk zijn aan %2$d"
 
 #. translators: 1: Parameter, 2: Maximum number.
-#: wp-includes/rest-api.php:1362
+#: wp-includes/rest-api.php:1368
 msgid "%1$s must be less than %2$d"
 msgstr "%1$s moet minder zijn dan %2$d"
 
 #. translators: 1: Parameter, 2: Minimum number.
-#: wp-includes/rest-api.php:1357
+#: wp-includes/rest-api.php:1363
 msgid "%1$s must be greater than or equal to %2$d"
 msgstr "%1$s moet groter of gelijk zijn aan %2$d"
 
 #. translators: 1: Parameter, 2: Minimum number.
-#: wp-includes/rest-api.php:1354
+#: wp-includes/rest-api.php:1360
 msgid "%1$s must be greater than %2$d"
 msgstr "%1$s moet groter zijn dan %2$d"
 
@@ -7239,7 +7243,7 @@ msgstr "Voorgestelde afbeeldingafmetingen: %1$s &times; %2$s pixels."
 msgid "Sorry, this file type is not permitted for security reasons."
 msgstr "Dit bestandstype is niet toegestaan in verband met veiligheidsredenen."
 
-#: wp-includes/comment.php:3295
+#: wp-includes/comment.php:3300
 msgid "Sorry, comments are not allowed for this item."
 msgstr "Reageren op dit item is niet toegestaan."
 
@@ -7568,7 +7572,7 @@ msgid "Invalid slug."
 msgstr "Ongeldige slug."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:717
-#: wp-includes/rest-api.php:1338 wp-includes/user.php:3568
+#: wp-includes/rest-api.php:1344 wp-includes/user.php:3568
 msgid "Invalid email address."
 msgstr "Ongeldig e-mailadres."
 
@@ -7585,7 +7589,7 @@ msgstr "Incorrecte JSONP-callbackfunctie."
 msgid "Invalid page template."
 msgstr "Ongeldige paginatemplate."
 
-#: wp-includes/script-loader.php:1211 wp-includes/rest-api.php:1332
+#: wp-includes/script-loader.php:1211 wp-includes/rest-api.php:1338
 #: wp-includes/post.php:3739
 msgid "Invalid date."
 msgstr "Ongeldige datum."
@@ -8061,42 +8065,42 @@ msgid "Item selected."
 msgstr "Item geselecteerd."
 
 #. translators: 1: Parameter, 2: Minimum number, 3: Maximum number.
-#: wp-includes/rest-api.php:1386
+#: wp-includes/rest-api.php:1392
 msgid "%1$s must be between %2$d (inclusive) and %3$d (inclusive)"
 msgstr "%1$s moet tussen %2$d (inclusief) en %3$d (inclusief) zijn"
 
 #. translators: 1: Parameter, 2: Minimum number, 3: Maximum number.
-#: wp-includes/rest-api.php:1381
+#: wp-includes/rest-api.php:1387
 msgid "%1$s must be between %2$d (exclusive) and %3$d (inclusive)"
 msgstr "%1$s moet tussen %2$d (exclusief) en %3$d (inclusief) zijn"
 
 #. translators: 1: Parameter, 2: Minimum number, 3: Maximum number.
-#: wp-includes/rest-api.php:1376
+#: wp-includes/rest-api.php:1382
 msgid "%1$s must be between %2$d (inclusive) and %3$d (exclusive)"
 msgstr "%1$s moet tussen %2$d (inclusief) en %3$d (exclusief) zijn"
 
 #. translators: 1: Parameter, 2: Minimum number, 3: Maximum number.
-#: wp-includes/rest-api.php:1371
+#: wp-includes/rest-api.php:1377
 msgid "%1$s must be between %2$d (exclusive) and %3$d (exclusive)"
 msgstr "%1$s moet tussen %2$d (exclusief) en %3$d (exclusief) zijn"
 
 #. translators: %s: IP address.
-#: wp-includes/rest-api.php:1344
+#: wp-includes/rest-api.php:1350
 msgid "%s is not a valid IP address."
 msgstr "%s is geen geldig IP-adres."
 
 #. translators: 1: Parameter, 2: List of types.
 #. translators: 1: Parameter, 2: Type name.
-#: wp-includes/rest-api.php:1231 wp-includes/rest-api.php:1241
-#: wp-includes/rest-api.php:1267 wp-includes/rest-api.php:1295
-#: wp-includes/rest-api.php:1310 wp-includes/rest-api.php:1315
-#: wp-includes/rest-api.php:1320 wp-includes/rest-api.php:1325
+#: wp-includes/rest-api.php:1237 wp-includes/rest-api.php:1247
+#: wp-includes/rest-api.php:1273 wp-includes/rest-api.php:1301
+#: wp-includes/rest-api.php:1316 wp-includes/rest-api.php:1321
+#: wp-includes/rest-api.php:1326 wp-includes/rest-api.php:1331
 msgid "%1$s is not of type %2$s."
 msgstr "%1$s is niet van het type %2$s."
 
 #. translators: 1: Parameter, 2: List of valid values.
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1363
-#: wp-includes/rest-api.php:1304
+#: wp-includes/rest-api.php:1310
 msgid "%1$s is not one of %2$s."
 msgstr "%1$s is niet één van %2$s."
 
@@ -8716,7 +8720,7 @@ msgstr "Bestaande reactie kan niet aangemaakt worden."
 #: wp-includes/class-wp-xmlrpc-server.php:3852
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:446
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:468
-#: wp-includes/comment.php:3347
+#: wp-includes/comment.php:3352
 msgid "Sorry, you must be logged in to comment."
 msgstr "Je moet ingelogd zijn om te kunnen reageren."
 
@@ -10200,24 +10204,24 @@ msgstr "Ongeldige shortcode-naam: lege naam opgegeven."
 msgid "Permalink saved"
 msgstr "Permalink opgeslagen"
 
-#: wp-includes/rest-api.php:917
+#: wp-includes/rest-api.php:923
 msgid "Cookie nonce is invalid"
 msgstr "Cookie nonce is ongeldig"
 
 #. translators: 1: Function name, 2: WordPress version number, 3: Error
 #. message.
-#: wp-includes/rest-api.php:565
+#: wp-includes/rest-api.php:571
 msgid "%1$s (since %2$s; %3$s)"
 msgstr "%1$s (vanaf %2$s; %3$s)"
 
 #. translators: 1: Function name, 2: WordPress version number.
-#: wp-includes/rest-api.php:544 wp-includes/rest-api.php:568
+#: wp-includes/rest-api.php:550 wp-includes/rest-api.php:574
 msgid "%1$s (since %2$s; no alternative available)"
 msgstr "%1$s (vanaf %2$s; geen alternatief beschikbaar)"
 
 #. translators: 1: Function name, 2: WordPress version number, 3: New function
 #. name.
-#: wp-includes/rest-api.php:541
+#: wp-includes/rest-api.php:547
 msgid "%1$s (since %2$s; use %3$s instead)"
 msgstr "%1$s (vanaf %2$s; gebruik %3$s)"
 
@@ -11932,7 +11936,7 @@ msgstr "Widgets zijn onafhankelijke gedeeltes met inhoud die in de widgetruimtes
 msgid "You are customizing %s"
 msgstr "Je bent %s aan het aanpassen"
 
-#: wp-includes/comment.php:3396
+#: wp-includes/comment.php:3401
 msgid "<strong>Error</strong>: The comment could not be saved. Please try again later."
 msgstr "<strong>FOUT</strong>: de reactie kon niet worden opgeslagen. Probeer het later nog een keer."
 
@@ -13143,8 +13147,8 @@ msgid "The login page will open in a new tab. After logging in you can close it 
 msgstr "De loginpagina wordt in een nieuw venster geopend. Na het inloggen kun je het nieuwe venster sluiten en naar deze pagina terugkeren."
 
 #. translators: %s: Comment author link.
-#: wp-includes/class-walker-comment.php:287
-#: wp-includes/class-walker-comment.php:377
+#: wp-includes/class-walker-comment.php:326
+#: wp-includes/class-walker-comment.php:423
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">schreef:</span>"
 
@@ -14136,15 +14140,15 @@ msgstr "%s overschrijdt de maximale uploadgrootte voor deze site."
 msgid "Feedback"
 msgstr "Terugkoppeling"
 
-#: wp-includes/comment.php:3355
+#: wp-includes/comment.php:3360
 msgid "<strong>Error</strong>: Please fill the required fields (name, email)."
 msgstr "<strong>FOUT</strong>: vul alle vereiste velden in (naam, e-mail)."
 
-#: wp-includes/comment.php:3357
+#: wp-includes/comment.php:3362
 msgid "<strong>Error</strong>: Please enter a valid email address."
 msgstr "<strong>FOUT</strong>: je hebt een ongeldig e-mailadres opgegeven."
 
-#: wp-includes/comment.php:3382
+#: wp-includes/comment.php:3387
 msgid "<strong>Error</strong>: Please type a comment."
 msgstr "<strong>FOUT</strong>: schrijf een reactie."
 
@@ -14295,7 +14299,7 @@ msgstr "Berichtnavigatie"
 msgid "Link to %s"
 msgstr "Link naar %s"
 
-#: wp-includes/class-walker-comment.php:242
+#: wp-includes/class-walker-comment.php:250
 msgid "Pingback:"
 msgstr "Pingback:"
 
@@ -16997,7 +17001,7 @@ msgstr "Eenmaal per uur"
 msgid "This argument has changed to an array to match the behavior of the other cron functions."
 msgstr "Dit argument is veranderd in een array om het in andere functies in de cron op te kunnen nemen."
 
-#: wp-includes/comment.php:2279
+#: wp-includes/comment.php:2284
 msgid "Could not update comment status"
 msgstr "De reactiestatus kan niet bijgewerkt worden"
 
@@ -17080,18 +17084,18 @@ msgstr "Meta"
 msgid "Search results for %s"
 msgstr "Zoekresultaten voor %s"
 
-#: wp-includes/class-walker-comment.php:304
+#: wp-includes/class-walker-comment.php:343
 msgid "(Edit)"
 msgstr "(Bewerken)"
 
 #. translators: 1: Comment date, 2: Comment time.
-#: wp-includes/class-walker-comment.php:300
-#: wp-includes/class-walker-comment.php:388
+#: wp-includes/class-walker-comment.php:339
+#: wp-includes/class-walker-comment.php:434
 msgid "%1$s at %2$s"
 msgstr "%1$s om %2$s"
 
-#: wp-includes/class-walker-comment.php:269
-#: wp-includes/class-walker-comment.php:359
+#: wp-includes/class-walker-comment.php:302
+#: wp-includes/class-walker-comment.php:400
 msgid "Your comment is awaiting moderation."
 msgstr "Je reactie is in afwachting van moderatie."
 
@@ -17168,7 +17172,7 @@ msgstr "Alle"
 
 #: wp-includes/class-wp-xmlrpc-server.php:3875
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:549
-#: wp-includes/comment.php:3268
+#: wp-includes/comment.php:3273
 msgid "Sorry, comments are closed for this item."
 msgstr "Sorry, reacties op dit item zijn gesloten."
 
@@ -17712,7 +17716,7 @@ msgid "Submit"
 msgstr "Verzenden"
 
 #. translators: Name of a comment's author after being anonymized.
-#: wp-includes/comment.php:3568 wp-includes/class-wp-theme.php:897
+#: wp-includes/comment.php:3573 wp-includes/class-wp-theme.php:897
 #: wp-includes/comment-template.php:32
 msgid "Anonymous"
 msgstr "Anoniem"
@@ -17827,7 +17831,7 @@ msgstr "Samenvatting"
 msgid "Publish"
 msgstr "Publiceren"
 
-#: wp-includes/script-loader.php:1274 wp-includes/comment.php:3497
+#: wp-includes/script-loader.php:1274 wp-includes/comment.php:3502
 #: wp-includes/link-template.php:3047 wp-includes/link-template.php:3107
 msgid "Comments"
 msgstr "Reacties"
@@ -17856,8 +17860,8 @@ msgid "%s ago"
 msgstr "%s geleden"
 
 #: wp-includes/class-wp-editor.php:1388
-#: wp-includes/class-walker-comment.php:242
-#: wp-includes/class-walker-comment.php:392 wp-includes/js/dist/editor.js:12394
+#: wp-includes/class-walker-comment.php:250
+#: wp-includes/class-walker-comment.php:438 wp-includes/js/dist/editor.js:12394
 #: wp-includes/js/dist/block-editor.js:20123
 #: wp-includes/js/dist/block-editor.js:20742
 #: wp-includes/js/dist/block-editor.js:22523

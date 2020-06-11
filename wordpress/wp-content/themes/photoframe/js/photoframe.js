@@ -27,6 +27,8 @@ jQuery(document).ready(function($) {
 		label: photoframeStrings.slicknav_menu_home,
 		allowParentLinks: true
 	});
+	
+	$("li").removeClass("menu-item-has-children");
 
 	jQuery(".site-hero-slideshow").flexslider({
 		selector: ".site-hero-slideshow-list .site-hero-slideshow-item",
